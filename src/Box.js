@@ -8,7 +8,7 @@ const Box = ({color, height, width, id, remove})=> {
 
 
     return (
-        <div  className='Box' id={id} 
+        <div  className='Box' id={id} data-testid={color}
         style={{            
             backgroundColor: color,
             minHeight:`3em`,

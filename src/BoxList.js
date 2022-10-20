@@ -9,13 +9,13 @@ import { v4 as uuid } from 'uuid'
 const BoxList =()=>{
     const INITIAL_STATE = [
         { 
-            id:uuid(),
+            id:2,
             color: 'red',
             height:10,
             width:10
         },
         { 
-            id:uuid(),
+            id:1,
             color: 'blue',
             height:10,
             width:10
@@ -32,7 +32,7 @@ const BoxList =()=>{
              setBoxes((boxes)=>{ 
                 const boxesCopy = [...boxes]
                 const indexOfObject = boxesCopy.findIndex( object => object.id === id )
-                const final = boxesCopy.splice(indexOfObject, 1);
+                boxesCopy.splice(indexOfObject, 1);
                 return [...boxesCopy]
                 
 
