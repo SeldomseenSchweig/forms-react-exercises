@@ -11,7 +11,6 @@ const NewTodoForm =({addTodo})=>{
     }
     const [formData, setFormData] = useState([INITIAL_STATE])
     const handleChange = (e) =>{
-        console.log("value:", e.target.value)
         const {name,value} = e.target;
     
         setFormData(formData =>( {
@@ -29,17 +28,18 @@ const NewTodoForm =({addTodo})=>{
 
     return (
 
-        <form onSubmit={handleSubmit} >
+        <form  >
             <label htmlFor='todo'> Todo</label>
             <input 
             id='todo'
             type='text'
+            name='text'
             placeholder='todo'
             value={formData.text}
             onChange={handleChange}
             />
 
-          <button>Submit</button>  
+          <button onClick={handleSubmit}>Submit</button> 
         </form>
     )
 

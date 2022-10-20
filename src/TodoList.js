@@ -9,11 +9,11 @@ import { v4 as uuid } from 'uuid'
 const TodoList =()=>{
     const INITIAL_STATE = [
         { 
-            id:2,
+            id:1,
             text:"Wash the car"
         },
         { 
-            id:1,
+            id:2,
             text: 'Clean the gutters',
 
         }
@@ -23,12 +23,14 @@ const TodoList =()=>{
         setTodos(Todos =>([...Todos,{...newTodo, id:uuid()} ]));
     }
     const remove = (e) => {
-        
+
         const id = e.target.parentNode.id;
-                    
-             setTodos((Todos)=>{ 
+             setTodos((Todos)=>{
                 const TodosCopy = [...Todos]
-                const indexOfObject = TodosCopy.findIndex( object => object.id === id )
+
+                
+                const indexOfObject = TodosCopy.findIndex(object => object.id === Number(id))
+
                 TodosCopy.splice(indexOfObject, 1);
                 return [...TodosCopy]
                 
@@ -45,7 +47,7 @@ const TodoList =()=>{
             <h1> Todo List</h1>
             <div>
             
-            { Todos.map(({id,text}) =><Todo id={id} text={text} key={id} remove={remove}/> )}
+            { Todos.map(({id,text}) =><Todo id={id} text={text} key={id} remove={remove} /> )}
             </div>
 
             
