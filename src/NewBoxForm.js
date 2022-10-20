@@ -35,7 +35,7 @@ const NewBoxForm =({addBox})=>{
             id='color'
             name='color'
             type='text'
-            placeholder='Color'
+            placeholder='color'
             value={formData.color}
             onChange={handleChange}
             />
